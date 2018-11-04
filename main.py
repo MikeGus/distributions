@@ -36,7 +36,7 @@ class DistributionDataGetter(QtCore.QObject):
         if x < 0:
             return 0
         sum = 0
-        for i in range(0, int(k - 1)):
+        for i in range(0, int(k)):
             sum += (exp(-l * x) * ((l * x) ** i)) / factorial(i)
         return 1 - sum
 
@@ -150,7 +150,7 @@ class MyWindow(QtWidgets.QWidget):
     @QtCore.pyqtSlot()
     def on_radioEven_clicked(self):
         self.firstParamLabel.setText('a = ')
-        self.secondParam.setMinimum(-1000)
+        self.firstParam.setMinimum(-1000)
         self.secondParamLabel.setText('b = ')
         self.secondParam.setMinimum(-1000)
         self.secondParam.setDecimals(2)
